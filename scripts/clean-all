@@ -1,0 +1,12 @@
+#!/bin/bash -eu
+
+rm -rf \
+    .eggs/ \
+    .pytest_cache/ \
+    build/ \
+    dist/ \
+    src/colorgrade.egg-info/ \
+    src/colorgrade/__pycache__/ \
+    tests/__pycache__/ \
+    venv/ \
+    # EOL

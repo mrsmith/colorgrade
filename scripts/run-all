@@ -1,0 +1,24 @@
+#!/bin/bash -eu
+
+PYTHON=python3
+PIP="python3 -m pip"
+
+mkdir -p venv
+$PYTHON -m virtualenv ./venv
+
+source ./venv/bin/activate
+
+which $PYTHON
+$PYTHON --version
+
+$PIP install behave flake8 black
+
+$PYTHON setup.py develop
+$PYTHON setup.py flake8
+$PYTHON setup.py pytest
+$PYTHON setup.py behave_test
+
+scripts/run-black --check
+
+deactivate
+echo DONE

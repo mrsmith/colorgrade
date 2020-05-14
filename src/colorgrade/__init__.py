@@ -43,7 +43,7 @@ def select_column(data, i, default=None):
 def to_float(s, default=0.0):
     try:
         return float(s)
-    except ValueError:
+    except (TypeError, ValueError):
         return default
 
 

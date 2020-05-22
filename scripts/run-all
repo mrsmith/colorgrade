@@ -11,7 +11,7 @@ source ./venv/bin/activate
 which $PYTHON
 $PYTHON --version
 
-$PIP install behave flake8 black
+$PIP install -r requirements.txt
 
 $PYTHON setup.py develop
 $PYTHON setup.py flake8
